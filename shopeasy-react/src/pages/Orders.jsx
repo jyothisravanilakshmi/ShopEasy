@@ -18,7 +18,7 @@ function Orders({ userEmail, isLoggedIn, onNavigate }) {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/orders?userEmail=${encodeURIComponent(userEmail)}`
+        `https://shopeasy-backend-seven.vercel.app/api/orders?userEmail=${encodeURIComponent(userEmail)}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch orders from server");

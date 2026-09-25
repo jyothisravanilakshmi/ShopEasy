@@ -182,7 +182,7 @@ function App() {
   // Fetch logged-in user's cart from Express backend (MongoDB Atlas ShopEasy → cart)
   const fetchUserCart = useCallback((email) => {
     if (!email) return;
-    fetch(`http://localhost:5000/api/cart?userEmail=${encodeURIComponent(email)}`)
+    fetch(`https://shopeasy-backend-seven.vercel.app/api/cart?userEmail=${encodeURIComponent(email)}`)
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch cart from server");
         return res.json();
@@ -200,7 +200,7 @@ function App() {
 
   // Fetch catalog products from Express backend on mount
   useEffect(() => {
-    fetch("http://localhost:5000/api/products")
+    fetch("https://shopeasy-backend-seven.vercel.app/api/products")
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch products");
         return res.json();
@@ -272,7 +272,7 @@ function App() {
     };
 
     // Send request from React to Express backend (Express saves in MongoDB ShopEasy → cart)
-    fetch("http://localhost:5000/api/cart", {
+    fetch("https://shopeasy-backend-seven.vercel.app/api/cart", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -338,7 +338,7 @@ function App() {
     if (isLoggedIn && userEmail) {
       if (newQty <= 0) {
         // Remove item via backend API
-        fetch("http://localhost:5000/api/cart/item", {
+        fetch("https://shopeasy-backend-seven.vercel.app/api/cart/item", {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -355,7 +355,7 @@ function App() {
           .catch((err) => console.warn("Cart remove error:", err));
       } else {
         // Update item quantity via backend API
-        fetch("http://localhost:5000/api/cart/item", {
+        fetch("https://shopeasy-backend-seven.vercel.app/api/cart/item", {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -392,7 +392,7 @@ function App() {
     const numId = Number(productId);
 
     if (isLoggedIn && userEmail) {
-      fetch("http://localhost:5000/api/cart/item", {
+      fetch("https://shopeasy-backend-seven.vercel.app/api/cart/item", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -419,7 +419,7 @@ function App() {
   // CLEAR CART
   const clearCart = () => {
     if (isLoggedIn && userEmail) {
-      fetch("http://localhost:5000/api/cart", {
+      fetch("https://shopeasy-backend-seven.vercel.app/api/cart", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

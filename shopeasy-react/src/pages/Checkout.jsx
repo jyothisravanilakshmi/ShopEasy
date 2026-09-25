@@ -279,7 +279,7 @@ function Checkout({ cart, currentUser, isLoggedIn, onPlaceOrder, onNavigate }) {
 
     try {
       // 1. Post order to backend MongoDB API
-      const orderRes = await fetch("http://localhost:5000/api/orders", {
+      const orderRes = await fetch("https://shopeasy-backend-seven.vercel.app/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(orderPayload)
@@ -295,7 +295,7 @@ function Checkout({ cart, currentUser, isLoggedIn, onPlaceOrder, onNavigate }) {
 
       // 2. Record payment in backend MongoDB API (No card numbers/CVV stored)
       try {
-        await fetch("http://localhost:5000/api/payments", {
+        await fetch("https://shopeasy-backend-seven.vercel.app/api/payments", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
