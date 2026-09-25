@@ -18,26 +18,19 @@ const app = express();
 // DATABASE CONNECTION (MongoDB Atlas)
 // ==========================================
 const mongoUri = process.env.MONGODB_URI;
-if (mongoUri && !mongoUri.includes("password@")) {
-  mongoose
-    .connect(mongoUri)
-    .then(() => {
-      console.log("MongoDB Atlas connected successfully to database: ShopEasy");
-    })
-    .catch((error) => {
-      console.error("MongoDB connection warning:", error.message);
-      console.log("Backend running with local fallback storage.");
-    });
+
+if (!mongoUri) {
+  console.error("MONGODB_URI is not set");
 } else {
-  // If password placeholder is still present, attempt connect or log instructions
   mongoose
     .connect(mongoUri)
     .then(() => {
-      console.log("MongoDB Atlas connected successfully to database: ShopEasy");
+      console.log(
+        "MongoDB Atlas connected successfully to database: ShopEasy"
+      );
     })
     .catch((error) => {
-      console.warn("MongoDB Atlas connection notice: Check your password in backend/.env.");
-      console.warn("Resilient backend active with in-memory fallback store.");
+      console.error("MongoDB connection failed:", error.message);
     });
 }
 
@@ -60,7 +53,10 @@ app.get("/", (req, res) => {
   res.json({
     message: "ShopEasy Backend API is running",
     status: "healthy",
-    database: mongoose.connection.readyState === 1 ? "Connected to MongoDB Atlas" : "In-Memory Fallback Active",
+    database:
+      mongoose.connection.readyState === 1
+        ? "Connected to MongoDB Atlas"
+        : "Database Connection Pending/Failed",
     endpoints: [
       "/api/products",
       "/api/users",
