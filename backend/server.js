@@ -15,24 +15,29 @@ const reviewRoutes = require("./routes/reviewRoutes");
 const app = express();
 
 // ==========================================
-// DATABASE CONNECTION (MongoDB Atlas)
+// MONGODB CONNECTION
 // ==========================================
 const mongoUri = process.env.MONGODB_URI;
 
-if (!mongoUri) {
-  console.error("MONGODB_URI is not set");
-} else {
-  mongoose
-    .connect(mongoUri)
-    .then(() => {
-      console.log(
-        "MongoDB Atlas connected successfully to database: ShopEasy"
-      );
-    })
-    .catch((error) => {
-      console.error("MongoDB connection failed:", error.message);
-    });
-}
+let mongoConnectionPromise = null;
+
+const connectDB = async () => {
+  if (!mongoUri) {
+    throw new Error("MONGODB_URI is not set");
+  }
+
+  if (mongoose.connection.readyState === 1) {
+    return;
+  }
+
+  if (!mongoConnectionPromise) {
+    mongoConnectionPromise = mongoose.connect(mongoUri);
+  }
+
+  await mongoConnectionPromise;
+
+  console.log("MongoDB Atlas connected successfully to database: ShopEasy");
+};
 
 // ==========================================
 // MIDDLEWARE
@@ -40,7 +45,24 @@ if (!mongoUri) {
 app.use(cors());
 app.use(express.json());
 
-// Request logging middleware for debugging
+// ==========================================
+// MONGODB CONNECTION MIDDLEWARE
+// ==========================================
+app.use(async (req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (error) {
+    console.error("MongoDB connection failed:", error.message);
+
+    res.status(500).json({
+      message: "Database connection failed",
+      error: error.message
+    });
+  }
+});
+
+// Request logging middleware
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.url}`);
   next();
@@ -56,7 +78,7 @@ app.get("/", (req, res) => {
     database:
       mongoose.connection.readyState === 1
         ? "Connected to MongoDB Atlas"
-        : "Database Connection Pending/Failed",
+        : "Database Connection Failed",
     endpoints: [
       "/api/products",
       "/api/users",
@@ -81,7 +103,7 @@ app.use("/api/addresses", addressRoutes);
 app.use("/api/reviews", reviewRoutes);
 
 // ==========================================
-// 404 HANDLER FOR UNDEFINED ROUTES
+// 404 HANDLER
 // ==========================================
 app.use((req, res) => {
   res.status(404).json({
@@ -94,6 +116,7 @@ app.use((req, res) => {
 // ==========================================
 app.use((err, req, res, next) => {
   console.error("Server Error:", err);
+
   res.status(500).json({
     message: err.message || "Internal Server Error"
   });
