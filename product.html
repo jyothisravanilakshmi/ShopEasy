@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ShopEasy - Products</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <!-- ==========================================
+         NAVBAR
+         ========================================== -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            🛍️ ShopEasy
+        </a>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+
+            <li>
+                <a href="product.html">
+                    Products
+                </a>
+            </li>
+
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+
+
+            <!-- Login/Profile added by JavaScript -->
+
+            <li id="auth-nav"></li>
+
+
+            <li>
+                <a href="cart.html" class="cart-link">
+                    🛒 Cart
+                    <span class="cart-count">0</span>
+                </a>
+            </li>
+
+        </ul>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         PRODUCTS HEADER
+         ========================================== -->
+
+    <section class="products-header">
+
+        <h1>
+            Our Products 🛍️
+        </h1>
+
+
+        <p>
+            Explore our collection and find
+            something you love.
+        </p>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-container">
+
+            <input
+                type="text"
+                id="search"
+                placeholder="Search products..."
+                autocomplete="off"
+            >
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         CATEGORY FILTERS
+         ========================================== -->
+
+    <section class="filter-section">
+
+        <div class="category-filters">
+
+
+            <button
+                class="filter-btn active"
+                data-category="all"
+                type="button"
+            >
+                🛍️ All
+            </button>
+
+
+            <button
+                class="filter-btn"
+                data-category="electronics"
+                type="button"
+            >
+                📱 Electronics
+            </button>
+
+
+            <button
+                class="filter-btn"
+                data-category="fashion"
+                type="button"
+            >
+                👕 Fashion
+            </button>
+
+
+            <button
+                class="filter-btn"
+                data-category="shoes"
+                type="button"
+            >
+                👟 Shoes
+            </button>
+
+
+            <button
+                class="filter-btn"
+                data-category="bags"
+                type="button"
+            >
+                🎒 Bags
+            </button>
+
+
+            <button
+                class="filter-btn"
+                data-category="accessories"
+                type="button"
+            >
+                🕶️ Accessories
+            </button>
+
+        </div>
+
+
+        <p
+            class="filter-result"
+            id="filter-result"
+        >
+            Showing 20 products
+        </p>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         PRODUCTS
+         ========================================== -->
+
+    <section class="products-list-section">
+
+        <div
+            class="product-grid"
+            id="product-list"
+        >
+
+            <!-- Products are created by JavaScript -->
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+
+            <!-- SHOP EASY -->
+
+            <div>
+
+                <h3>
+                    🛍️ ShopEasy
+                </h3>
+
+                <p>
+                    Your simple and convenient
+                    online shopping destination.
+                </p>
+
+            </div>
+
+
+
+            <!-- QUICK LINKS -->
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="product.html">
+                            Products
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- CATEGORIES -->
+
+            <div>
+
+                <h3>
+                    Categories
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="product.html?category=electronics">
+                            Electronics
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="product.html?category=fashion">
+                            Fashion
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="product.html?category=shoes">
+                            Shoes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="product.html?category=bags">
+                            Bags
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="product.html?category=accessories">
+                            Accessories
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- ACCOUNT -->
+
+            <div>
+
+                <h3>
+                    Account
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="login.html">
+                            Login
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="cart.html">
+                            My Cart
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Help
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 ShopEasy. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

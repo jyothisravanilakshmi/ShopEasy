@@ -1,0 +1,473 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout - ShopEasy</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         NAVBAR
+    =========================================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            ShopEasy
+        </div>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="product.html">Products</a>
+
+            <a href="about.html">About</a>
+
+            <a href="contact.html">Contact</a>
+
+            <span id="auth-nav"></span>
+
+            <a href="cart.html">
+                🛒 Cart
+                <span class="cart-count">0</span>
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ==========================================
+         CHECKOUT SECTION
+    =========================================== -->
+
+    <section class="checkout-section">
+
+        <h1>Checkout</h1>
+
+
+        <div class="checkout-container">
+
+
+            <!-- ==================================
+                 CUSTOMER INFORMATION
+            =================================== -->
+
+            <div class="checkout-form">
+
+                <h2>Customer Information</h2>
+
+
+                <form onsubmit="placeOrder(event)">
+
+                    <!-- Name -->
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Phone -->
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter your phone number"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Address -->
+
+                    <div class="form-group">
+
+                        <label for="address">
+                            Delivery Address
+                        </label>
+
+                        <textarea
+                            id="address"
+                            placeholder="Enter your complete address"
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- City -->
+
+                    <div class="form-group">
+
+                        <label for="city">
+                            City
+                        </label>
+
+                        <input
+                            type="text"
+                            id="city"
+                            placeholder="Enter your city"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Pincode -->
+
+                    <div class="form-group">
+
+                        <label for="pincode">
+                            Pincode
+                        </label>
+
+                        <input
+                            type="text"
+                            id="pincode"
+                            placeholder="Enter your pincode"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Payment -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Payment Method
+                        </label>
+
+
+                        <div class="payment-options">
+
+                            <label class="payment-option">
+
+                                <input
+                                    type="radio"
+                                    name="payment"
+                                    value="cod"
+                                    required
+                                >
+
+                                Cash on Delivery
+
+                            </label>
+
+
+                            <label class="payment-option">
+
+                                <input
+                                    type="radio"
+                                    name="payment"
+                                    value="upi"
+                                >
+
+                                UPI
+
+                            </label>
+
+
+                            <label class="payment-option">
+
+                                <input
+                                    type="radio"
+                                    name="payment"
+                                    value="card"
+                                >
+
+                                Credit / Debit Card
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Place Order -->
+
+                    <button
+                        type="submit"
+                        class="place-order-btn"
+                    >
+                        Place Order
+                    </button>
+
+                </form>
+
+            </div>
+
+
+
+            <!-- ==================================
+                 ORDER SUMMARY
+            =================================== -->
+
+            <div class="checkout-summary">
+
+                <h2>Order Summary</h2>
+
+
+                <!-- JavaScript will display
+                     cart products here -->
+
+                <div id="checkout-items">
+
+                </div>
+
+
+                <!-- Total -->
+
+                <div class="checkout-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="checkout-total">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div>
+
+                <h2>ShopEasy</h2>
+
+                <p>
+                    Your simple and trusted online shopping
+                    destination.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+
+                <a href="product.html">Products</a>
+
+                <a href="about.html">About</a>
+
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Contact</h3>
+
+                <p>Email: support@shopeasy.com</p>
+
+                <p>Phone: +91 98765 43210</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 ShopEasy. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
+
+    <script src="script.js"></script>
+
+
+    <!-- ==========================================
+         CHECKOUT SUMMARY SCRIPT
+    =========================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const checkoutItems =
+                    document.getElementById("checkout-items");
+
+                const checkoutTotal =
+                    document.getElementById("checkout-total");
+
+
+                if (!checkoutItems || !checkoutTotal) {
+                    return;
+                }
+
+
+                if (cart.length === 0) {
+
+                    checkoutItems.innerHTML = `
+
+                        <div class="checkout-empty">
+
+                            <h2>
+                                Your cart is empty
+                            </h2>
+
+                            <p>
+                                Please add products before
+                                going to checkout.
+                            </p>
+
+                            <a
+                                href="product.html"
+                                class="checkout-btn"
+                            >
+                                Start Shopping
+                            </a>
+
+                        </div>
+
+                    `;
+
+                    checkoutTotal.textContent = "₹0";
+
+                    return;
+
+                }
+
+
+                let total = 0;
+
+
+                checkoutItems.innerHTML = "";
+
+
+                cart.forEach(item => {
+
+                    const itemTotal =
+                        item.price * item.quantity;
+
+
+                    total += itemTotal;
+
+
+                    checkoutItems.innerHTML += `
+
+                        <div class="checkout-item">
+
+                            <img
+                                src="${item.image}"
+                                alt="${item.name}"
+                            >
+
+
+                            <div class="checkout-item-info">
+
+                                <h3>
+                                    ${item.name}
+                                </h3>
+
+                                <p>
+                                    ₹${item.price}
+                                    ×
+                                    ${item.quantity}
+                                </p>
+
+                            </div>
+
+
+                            <div class="checkout-item-price">
+
+                                ₹${itemTotal}
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+                });
+
+
+                checkoutTotal.textContent =
+                    `₹${total}`;
+
+            }
+
+        );
+
+    </script>
+
+</body>
+
+</html>
+```

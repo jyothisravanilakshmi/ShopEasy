@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ShopEasy | Online Shopping</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🛍️ <span>ShopEasy</span>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html" class="active">Home</a>
+                </li>
+
+                <li>
+                    <a href="product.html">Products</a>
+                </li>
+
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+
+                <!-- JavaScript adds Login/Profile here -->
+                <li id="auth-nav"></li>
+
+                <li>
+                    <a href="cart.html" class="cart-link">
+                        🛒 Cart
+                        <span class="cart-count">0</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-tag">
+            ✨ WELCOME TO SHOPEASY
+        </span>
+
+        <h1>
+            Shop Smart.
+            <span>Live Better.</span>
+        </h1>
+
+        <p>
+            Discover the best products at the best prices.
+            Quality you can trust, style you will love.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="product.html" class="hero-btn">
+                Start Shopping →
+            </a>
+
+            <a href="#categories" class="secondary-btn">
+                Explore Categories
+            </a>
+
+        </div>
+
+        <div class="hero-features">
+
+            <div>
+                🛡️
+                <span>Secure Shopping</span>
+            </div>
+
+            <div>
+                ↻
+                <span>Easy Returns</span>
+            </div>
+
+            <div>
+                🏷️
+                <span>Best Prices</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HERO PRODUCT VISUAL -->
+
+    <div class="hero-visual">
+
+        <div class="hero-big-circle"></div>
+
+        <img
+            src="images/shoes.jpg"
+            class="hero-product hero-shoes"
+            alt="Sports Shoes"
+        >
+
+        <img
+            src="images/headphone.jpg"
+            class="hero-product hero-headphones"
+            alt="Wireless Headphones"
+        >
+
+        <img
+            src="images/smartwatch.jpg"
+            class="hero-product hero-watch"
+            alt="Smart Watch"
+        >
+
+        <img
+            src="images/backpack.jpg"
+            class="hero-product hero-bag"
+            alt="Backpack"
+        >
+
+        <div class="discount-circle">
+            <small>UP TO</small>
+            <strong>50%</strong>
+            <span>OFF</span>
+        </div>
+
+        <div class="hero-decoration decoration-one"></div>
+        <div class="hero-decoration decoration-two"></div>
+        <div class="hero-decoration decoration-three"></div>
+
+    </div>
+
+</section>
+
+    <!-- ================= TRUST ================= -->
+
+    <section class="trust-section">
+
+        <div class="trust-grid">
+
+            <div class="trust-item">
+
+                <div class="trust-icon">
+                    🚚
+                </div>
+
+                <div>
+                    <h3>Fast Delivery</h3>
+                    <p>Quick & reliable delivery</p>
+                </div>
+
+            </div>
+
+
+            <div class="trust-item">
+
+                <div class="trust-icon">
+                    🔒
+                </div>
+
+                <div>
+                    <h3>Secure Payment</h3>
+                    <p>100% safe checkout</p>
+                </div>
+
+            </div>
+
+
+            <div class="trust-item">
+
+                <div class="trust-icon">
+                    ⭐
+                </div>
+
+                <div>
+                    <h3>Quality Products</h3>
+                    <p>Products you can trust</p>
+                </div>
+
+            </div>
+
+
+            <div class="trust-item">
+
+                <div class="trust-icon">
+                    💬
+                </div>
+
+                <div>
+                    <h3>Customer Support</h3>
+                    <p>We're here to help</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FEATURED PRODUCTS ================= -->
+
+    <section class="featured-section">
+
+        <div class="section-title">
+
+            <span class="section-label">
+                OUR COLLECTION
+            </span>
+
+            <h2>
+                🔥 Trending Products
+            </h2>
+
+            <p class="section-subtitle">
+                Discover our most popular products
+            </p>
+
+        </div>
+
+
+        <div class="product-grid">
+
+
+            <!-- PRODUCT 1 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    <span class="product-badge">
+                        Electronics
+                    </span>
+
+                    <img
+                        src="images/headphone.jpg"
+                        alt="Wireless Headphones"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Electronics
+                    </span>
+
+                    <h3>
+                        Wireless Headphones
+                    </h3>
+
+                    <p class="product-price">
+                        ₹1,999
+                    </p>
+
+                    <div class="product-buttons">
+
+                        <button
+                            class="view-details-btn"
+                            onclick="viewProduct(1)"
+                        >
+                            View Details
+                        </button>
+
+                        <button
+                            class="add-cart-btn"
+                            onclick="addToCart(1)"
+                        >
+                            🛒 Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    <span class="product-badge">
+                        Electronics
+                    </span>
+
+                    <img
+                        src="images/smartwatch.jpg"
+                        alt="Smart Watch"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Electronics
+                    </span>
+
+                    <h3>
+                        Smart Watch
+                    </h3>
+
+                    <p class="product-price">
+                        ₹2,499
+                    </p>
+
+                    <div class="product-buttons">
+
+                        <button
+                            class="view-details-btn"
+                            onclick="viewProduct(2)"
+                        >
+                            View Details
+                        </button>
+
+                        <button
+                            class="add-cart-btn"
+                            onclick="addToCart(2)"
+                        >
+                            🛒 Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    <span class="product-badge">
+                        Shoes
+                    </span>
+
+                    <img
+                        src="images/shoes.jpg"
+                        alt="Sports Shoes"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Shoes
+                    </span>
+
+                    <h3>
+                        Sports Shoes
+                    </h3>
+
+                    <p class="product-price">
+                        ₹1,799
+                    </p>
+
+                    <div class="product-buttons">
+
+                        <button
+                            class="view-details-btn"
+                            onclick="viewProduct(3)"
+                        >
+                            View Details
+                        </button>
+
+                        <button
+                            class="add-cart-btn"
+                            onclick="addToCart(3)"
+                        >
+                            🛒 Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    <span class="product-badge">
+                        Bags
+                    </span>
+
+                    <img
+                        src="images/backpack.jpg"
+                        alt="Backpack"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Bags
+                    </span>
+
+                    <h3>
+                        Stylish Backpack
+                    </h3>
+
+                    <p class="product-price">
+                        ₹999
+                    </p>
+
+                    <div class="product-buttons">
+
+                        <button
+                            class="view-details-btn"
+                            onclick="viewProduct(4)"
+                        >
+                            View Details
+                        </button>
+
+                        <button
+                            class="add-cart-btn"
+                            onclick="addToCart(4)"
+                        >
+                            🛒 Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="view-all">
+
+            <a href="product.html" class="hero-btn">
+                View All Products →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <section
+        class="categories-section"
+        id="categories"
+    >
+
+        <div class="section-title">
+
+            <span class="section-label">
+                EXPLORE
+            </span>
+
+            <h2>
+                🛍️ Shop by Category
+            </h2>
+
+            <p class="section-subtitle">
+                Find everything you need in one place
+            </p>
+
+        </div>
+
+
+        <div class="categories-grid">
+
+
+            <a
+                href="product.html?category=electronics"
+                class="category-card"
+            >
+
+                <div class="category-icon">
+                    📱
+                </div>
+
+                <h3>
+                    Electronics
+                </h3>
+
+                <p>
+                    Phones, gadgets & more
+                </p>
+
+                <span>
+                    Explore →
+                </span>
+
+            </a>
+
+
+            <a
+                href="product.html?category=fashion"
+                class="category-card"
+            >
+
+                <div class="category-icon">
+                    👕
+                </div>
+
+                <h3>
+                    Fashion
+                </h3>
+
+                <p>
+                    Trendy clothes & styles
+                </p>
+
+                <span>
+                    Explore →
+                </span>
+
+            </a>
+
+
+            <a
+                href="product.html?category=shoes"
+                class="category-card"
+            >
+
+                <div class="category-icon">
+                    👟
+                </div>
+
+                <h3>
+                    Shoes
+                </h3>
+
+                <p>
+                    Stylish & comfortable
+                </p>
+
+                <span>
+                    Explore →
+                </span>
+
+            </a>
+
+
+            <a
+                href="product.html?category=bags"
+                class="category-card"
+            >
+
+                <div class="category-icon">
+                    🎒
+                </div>
+
+                <h3>
+                    Bags
+                </h3>
+
+                <p>
+                    Backpacks & travel bags
+                </p>
+
+                <span>
+                    Explore →
+                </span>
+
+            </a>
+
+
+            <a
+                href="product.html?category=accessories"
+                class="category-card"
+            >
+
+                <div class="category-icon">
+                    🕶️
+                </div>
+
+                <h3>
+                    Accessories
+                </h3>
+
+                <p>
+                    Complete your style
+                </p>
+
+                <span>
+                    Explore →
+                </span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= OFFER ================= -->
+
+    <section class="offer-section">
+
+        <div class="offer-content">
+
+            <span class="offer-tag">
+                🎁 LIMITED TIME OFFER
+            </span>
+
+            <h2>
+                Great Deals Are Waiting For You!
+            </h2>
+
+            <p>
+                Discover amazing products at affordable prices.
+                Find your favorites before they're gone.
+            </p>
+
+            <a
+                href="product.html"
+                class="offer-btn"
+            >
+                Explore Deals →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= WHY CHOOSE US ================= -->
+
+    <section class="why-us">
+
+        <div class="section-title">
+
+            <span class="section-label">
+                WHY SHOPEASY
+            </span>
+
+            <h2>
+                💙 Why Choose ShopEasy?
+            </h2>
+
+            <p class="section-subtitle">
+                Shopping made simple, safe and enjoyable
+            </p>
+
+        </div>
+
+
+        <div class="why-grid">
+
+
+            <div class="why-card">
+
+                <div class="icon">
+                    🛍️
+                </div>
+
+                <h3>
+                    Wide Selection
+                </h3>
+
+                <p>
+                    Explore a wide range of products
+                    across multiple categories.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="icon">
+                    💰
+                </div>
+
+                <h3>
+                    Affordable Prices
+                </h3>
+
+                <p>
+                    Get great products at prices
+                    that fit your budget.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="icon">
+                    ❤️
+                </div>
+
+                <h3>
+                    Customer First
+                </h3>
+
+                <p>
+                    Your satisfaction is our priority
+                    at every step.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT PREVIEW ================= -->
+
+    <section class="about-preview">
+
+        <div class="about-preview-content">
+
+            <span class="section-label">
+                ABOUT SHOPEASY
+            </span>
+
+            <h2>
+                Shopping Made Easy 💙
+            </h2>
+
+            <p>
+                ShopEasy is a simple and user-friendly
+                online shopping platform where you can
+                discover electronics, fashion, shoes,
+                bags and accessories in one place.
+            </p>
+
+            <a
+                href="about.html"
+                class="learn-more-btn"
+            >
+                Learn More →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+
+            <div class="footer-column">
+
+                <h3>
+                    🛍️ ShopEasy
+                </h3>
+
+                <p>
+                    Everything you need,
+                    all in one place.
+                </p>
+
+                <p>
+                    Simple. Affordable. Reliable.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="product.html">
+                            Products
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            About Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Categories
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="product.html?category=electronics">
+                            Electronics
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="product.html?category=fashion">
+                            Fashion
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="product.html?category=shoes">
+                            Shoes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="product.html?category=bags">
+                            Bags
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="product.html?category=accessories">
+                            Accessories
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Account
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="login.html">
+                            Login
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="cart.html">
+                            My Cart
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Help & Support
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 ShopEasy. All Rights Reserved.
+            </p>
+
+            <p>
+                Made with ❤️ for easy shopping.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
